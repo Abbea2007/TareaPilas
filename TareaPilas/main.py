@@ -31,7 +31,7 @@ def main():
             gestion.mostrar_todos_votos(urna)
 
         elif opcion == "5":
-            print("👋 Saliendo del sistema. ¡Gracias por usar el registro de votos!")
+            print("Saliendo del sistema. ¡Gracias por usar el registro de votos!")
             break
 
         else:
