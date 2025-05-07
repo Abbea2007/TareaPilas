@@ -1,28 +1,26 @@
-# Controllers/gestion.py
-
-from templates import mensajes
-
 def registrar_voto(urna, voto):
     urna.registrar_voto(voto)
-    print(f"{mensajes.MENSAJE_VOTO_REGISTRADO} Voto: '{voto}'.")
+    print(f"Voto registrado exitosamente: '{voto}'.")
 
 def eliminar_ultimo_voto(urna):
     eliminado = urna.eliminar_ultimo_voto()
     if eliminado:
-        print(f"{mensajes.MENSAJE_VOTO_ELIMINADO} Voto eliminado: '{eliminado}'.")
+        print(f"Último voto eliminado: '{eliminado}'.")
     else:
-        print(mensajes.MENSAJE_URNA_VACIA)
+        print("La urna está vacía. No hay votos para eliminar.")
 
 def mostrar_ultimo_voto(urna):
     ultimo = urna.ultimo_voto()
     if ultimo:
-        print(f"{mensajes.MENSAJE_ULTIMO_VOTO} '{ultimo}'.")
+        print(f"El último voto registrado es: '{ultimo}'.")
     else:
-        print(mensajes.MENSAJE_URNA_VACIA)
+        print("La urna está vacía.")
 
 def mostrar_todos_votos(urna):
     votos = urna.mostrar_todos_votos()
     if votos:
-        print("Votos en la urna:", votos)
+        print("Lista de todos los votos registrados:")
+        for i, voto in enumerate(votos, 1):
+            print(f"{i}. {voto}")
     else:
-        print(mensajes.MENSAJE_URNA_VACIA)
+        print("La urna está vacía. No hay votos registrados.")

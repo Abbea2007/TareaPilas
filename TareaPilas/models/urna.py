@@ -1,5 +1,3 @@
-# Models/urna.py
-
 class UrnaDigital:
     def __init__(self):
         self.votos = []
@@ -10,12 +8,14 @@ class UrnaDigital:
     def eliminar_ultimo_voto(self):
         if self.votos:
             return self.votos.pop()
-        return None
+        else:
+            return None
 
     def ultimo_voto(self):
         if self.votos:
             return self.votos[-1]
-        return None
+        else:
+            return None
 
     def mostrar_todos_votos(self):
         return self.votos
